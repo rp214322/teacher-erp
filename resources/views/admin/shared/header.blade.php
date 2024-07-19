@@ -12,7 +12,7 @@
                     <span class="user-name">{!! Auth::user()->name !!}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <a class="dropdown-item" href="{!! route('logout') !!}" data-method="delete" data-confirm="Are you sure want to logout?"><i class="dw dw-logout"></i> Log Out</a>
+                    <a class="dropdown-item" href="{!! route('admin.admin.logout') !!}" data-method="delete" data-confirm="Are you sure want to logout?"><i class="dw dw-logout"></i> Log Out</a>
                 </div>
             </div>
         </div>

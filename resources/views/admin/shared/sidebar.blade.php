@@ -16,22 +16,22 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.booking.index') }}" class="dropdown-toggle no-arrow">
+                    <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-th-large"></span><span class="mtext">Program</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.booking.index') }}" class="dropdown-toggle no-arrow">
+                    <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-book"></span><span class="mtext">Subject</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.booking.index') }}" class="dropdown-toggle no-arrow">
+                    <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-chalkboard-teacher"></span><span class="mtext">Faculty</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('admin.booking.index') }}" class="dropdown-toggle no-arrow">
+                    <a href="#" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-user-graduate"></span><span class="mtext">Student</span>
                     </a>
                 </li>
