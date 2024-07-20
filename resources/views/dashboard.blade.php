@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('layouts.app')
 @section('content')
 {{-- <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">

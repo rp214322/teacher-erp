@@ -25,7 +25,7 @@ class AuthController extends Controller
     		Auth::login($user_id);
     		return redirect()->route('admin.dashboard')->with('success','You have logged in successfully.');
     	}
-    	return view('admin.auth.login');
+    	return view('auth.login');
     }
 
     public function postLogin(Request $request)

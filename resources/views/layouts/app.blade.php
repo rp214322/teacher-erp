@@ -28,12 +28,12 @@
 
 <body>
     <!-- Loader -->
-    <!-- @include('admin.shared.loader') -->
+    <!-- @include('shared.loader') -->
 
     <!-- Header -->
-    @include('admin.shared.header')
+    @include('shared.header')
 
-    @include('admin.shared.sidebar')
+    @include('shared.sidebar')
 
     <!-- Page Content -->
     <main>

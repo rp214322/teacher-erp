@@ -32,6 +32,6 @@ class DashboardController extends Controller
                 'feedback' => $fmonths
             );
 			$data = json_encode($data);
-        return view('admin.dashboard',compact('data'));
+        return view('dashboard',compact('data'));
     }
 }
