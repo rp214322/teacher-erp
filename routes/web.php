@@ -25,7 +25,7 @@ Route::middleware('admin')->namespace('\App\Http\Controllers')->name('admin.')->
 
 	Route::get('dashboard',[\App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
 
-	// Route for profile sjhdjdfhjdfhskjdfhskjdfhkjsf
+	// Route for profile
 	Route::get('profile',[\App\Http\Controllers\AuthController::class,'getProfile'])->name('profile');
 	Route::post('profile',[\App\Http\Controllers\AuthController::class,'postProfile'])->name('post.profile');
 
