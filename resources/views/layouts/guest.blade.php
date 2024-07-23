@@ -21,7 +21,7 @@
             <div class="container-fluid d-flex justify-content-between align-items-center">
                 <div class="brand-logo">
                     <a href={!! route('admin.dashboard') !!}>
-                        <img src="{!! asset('images/gmca-logo-2.png') !!}" alt="">
+                        <img src="{!! asset('images/PICA.jpeg') !!}" alt="">
                     </a>
                 </div>
             </div>

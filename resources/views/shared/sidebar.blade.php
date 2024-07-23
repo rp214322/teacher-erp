@@ -1,7 +1,7 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="{!! route('admin.dashboard') !!}">
-            <img src="{!! asset('images/gmca-logo-2.png') !!}" alt="" class="light-logo">
+            <img src="{!! asset('images/PICA.jpeg') !!}" alt="" class="light-logo">
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
