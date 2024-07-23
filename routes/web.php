@@ -35,6 +35,12 @@ Route::middleware('admin')->namespace('\App\Http\Controllers')->name('admin.')->
 
     Route::resource('users',UsersController::class);
 
+	//program
+	Route::get('/program',[\App\Http\Controllers\ProgramController::class,'index'])->name('program.index');
+	Route::get('program/store',[\App\Http\Controllers\ProgramController::class,'create'])->name('program.create');
+	Route::post('program',[\App\Http\Controllers\ProgramController::class,'store'])->name('program.store');
+	Route::get('program/{id}',[\App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit');
+
 	// Route for Logout
 	Route::post('logout',[\App\Http\Controllers\AuthController::class,'getLogout'])->name('admin.logout');
 
