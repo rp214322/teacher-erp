@@ -40,6 +40,8 @@ Route::middleware('admin')->namespace('\App\Http\Controllers')->name('admin.')->
 	Route::get('program/store',[\App\Http\Controllers\ProgramController::class,'create'])->name('program.create');
 	Route::post('program',[\App\Http\Controllers\ProgramController::class,'store'])->name('program.store');
 	Route::get('program/{id}',[\App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit');
+	Route::put('/program/{id}', [\App\Http\Controllers\ProgramController::class, 'update'])->name('program.update');
+	Route::delete('/program/{id}', [\App\Http\Controllers\ProgramController::class, 'destroy'])->name('program.delete');
 
 	// Route for Logout
 	Route::post('logout',[\App\Http\Controllers\AuthController::class,'getLogout'])->name('admin.logout');

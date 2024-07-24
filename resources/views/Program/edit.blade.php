@@ -1,8 +1,8 @@
-<form id="editable-form" action="#" method="POST">
+<form id="editable-form" action="{!! route('admin.program.update', [$program->id]) !!}" method="PUT">
     @csrf
     @method('PATCH')
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit Country </h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Program </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -29,6 +29,6 @@
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <a href="javascript:;" type="submit" class="btn btn-primary btn-submit"
-            data-id="countries_{!! $program->id !!}">Save changes</a>
-    </div>
+            data-id="programs_{!! $program->id !!}">Save changes</a>
+    </div>
 </form>

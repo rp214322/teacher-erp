@@ -22,8 +22,8 @@ class ProgramController extends Controller
 
                     $editBtn = '<div class="dropdown"><a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                                         <i class="dw dw-more"></i></a><div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">';
-                    $editBtn .= '<a href="javascript:;" class="dropdown-item fill_data" data-url="'.route('admin.program.edit',$program->id).'" data-method="get"><i class="dw dw-edit2"></i> Edit</a>';
-                    $editBtn .= '<a href="javascript:;" class="dropdown-item btn-delete" data-url="#" data-method="delete"><i class="dw dw-delete-3"></i> Delete</a></div>';
+                    $editBtn .= '<a href="javascript:;" class="dropdown-item fill_data" data-url="' . route('admin.program.edit', $program->id) . '" data-method="get"><i class="dw dw-edit2"></i> Edit</a>';
+                    $editBtn .= '<a href="javascript:;" class="dropdown-item btn-delete" data-url="' . route('admin.program.delete', $program->id) . '" data-method="delete"><i class="dw dw-delete-3"></i> Delete</a></div>';
                     return $editBtn;
                 })
                 ->toJson();
@@ -59,7 +59,31 @@ class ProgramController extends Controller
             return response()->json(["error" => "Something went wrong, Please try after sometime."], 422);
         }
     }
-    public function edit(Program $program) {
+    public function edit($id)
+    {
+        $program = Program::find($id);
         return view()->make('program.edit', compact('program'));
+    }
+    public function update(Request $request, $id)
+    {
+        try {
+            $program = Program::find($id);
+            $program->name = $request->get('name');
+            $program->status = $request->get('status');
+            $program->save();
+            return response()->json(['success', 'Program updated successfully.'], 200);
+        } catch (\Exception $e) {
+            return response()->json(["error" => "Something went wrong, Please try after sometime."], 422);
+        }
+    }
+    public function destroy($id)
+    {
+        try {
+            $program = Program::find($id);
+            $program->delete();
+            return response()->json(['success', 'Program deleted successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(["error" => "Something went wrong, Please try after sometime."], 422);
+        }
     }
 }
