@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Program extends Model
+class Subject extends Model
 {
+    use HasFactory;
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $dates = [ 'deleted_at' ] ;
@@ -20,21 +21,8 @@ class Program extends Model
              ] 
          ] ;
     }
-    public function subjects(){
-        return $this->hasMany(Subject::class);
-    }
-    protected static function boot()
+    public function program()
     {
-        parent::boot();
-
-        static::deleting(function ($product) {
-            foreach ($product->subjects as $subject) {
-                $subject->delete();
-            }
-        });
-
-        static::restoring(function ($product) {
-            $product->subjects()->withTrashed()->restore();
-        });
+        return $this->belongsTo(Program::class);
     }
 }
