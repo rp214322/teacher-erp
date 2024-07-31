@@ -42,6 +42,13 @@ Route::middleware('admin')->namespace('\App\Http\Controllers')->name('admin.')->
 	Route::get('program/{id}',[\App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit');
 	Route::put('/program/{id}', [\App\Http\Controllers\ProgramController::class, 'update'])->name('program.update');
 	Route::delete('/program/{id}', [\App\Http\Controllers\ProgramController::class, 'destroy'])->name('program.delete');
+	//subject
+	Route::get('/subject',[\App\Http\Controllers\SubjectController::class,'index'])->name('subject.index');
+	Route::get('subject/store',[\App\Http\Controllers\SubjectController::class,'create'])->name('subject.create');
+	Route::post('subject',[\App\Http\Controllers\SubjectController::class,'store'])->name('subject.store');
+	// Route::get('program/{id}',[\App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit');
+	// Route::put('/subject/{id}', [\App\Http\Controllers\ProgramController::class, 'update'])->name('program.update');
+	Route::delete('/subject/{id}', [\App\Http\Controllers\SubjectController::class, 'destroy'])->name('subject.delete');
 
 	// Route for Logout
 	Route::post('logout',[\App\Http\Controllers\AuthController::class,'getLogout'])->name('admin.logout');

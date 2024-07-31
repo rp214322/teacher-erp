@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('admin.subject.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-book"></span><span class="mtext">Subject</span>
                     </a>
                 </li>
