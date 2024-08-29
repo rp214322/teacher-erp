@@ -46,8 +46,8 @@ Route::middleware('admin')->namespace('\App\Http\Controllers')->name('admin.')->
 	Route::get('/subject',[\App\Http\Controllers\SubjectController::class,'index'])->name('subject.index');
 	Route::get('subject/store',[\App\Http\Controllers\SubjectController::class,'create'])->name('subject.create');
 	Route::post('subject',[\App\Http\Controllers\SubjectController::class,'store'])->name('subject.store');
-	// Route::get('program/{id}',[\App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit');
-	// Route::put('/subject/{id}', [\App\Http\Controllers\ProgramController::class, 'update'])->name('program.update');
+	Route::get('subject/{id}',[\App\Http\Controllers\SubjectController::class,'edit'])->name('subject.edit');
+	Route::put('/subject/{id}', [\App\Http\Controllers\SubjectController::class, 'update'])->name('subject.update');
 	Route::delete('/subject/{id}', [\App\Http\Controllers\SubjectController::class, 'destroy'])->name('subject.delete');
 
 	// Route for Logout

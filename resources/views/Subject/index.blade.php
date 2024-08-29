@@ -21,6 +21,7 @@
                                 <tr>
                                     <th class="table-plus datatable-nosort">No</th>
                                     <th>Program</th>
+                                    <th>Semester</th>
                                     <th>Name</th>
                                     <th class="datatable-nosort">Action</th>
                                 </tr>

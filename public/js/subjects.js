@@ -16,6 +16,7 @@ var userTable = $('#SubjectsTable').DataTable({
     columns: [
         {data: 'id', name: 'id',orderable: true,width:'4%'},
         {data: 'program', name: 'program.name',orderable:true},
+        {data: 'semester', name: 'semester',orderable: true},
         {data: 'name', name: 'name',orderable: true},
         {data: 'action', name: 'action', orderable: false,width:'10%'},
     ],
@@ -41,10 +42,10 @@ $('#user_filter').change(function (e) {
 // Sort by columns 1 and 2 and redraw
 // userTable.order( [ 0, 'asc' ]).draw();
 
-// $.fn.dataTable.ext.errMode = 'none';
-// userTable.on('error', function () {
-//     alert("Something went wrong, Please try after sometimes.");
-// });
+$.fn.dataTable.ext.errMode = 'none';
+userTable.on('error', function () {
+    alert("Something went wrong, Please try after sometimes.");
+});
 
 jQuery(function(){
     var m=document.getElementById('SubjectModel'),table=document.getElementById('SubjectsTable');

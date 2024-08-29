@@ -13,8 +13,19 @@
                 <div class="col-sm-9">
                     <select name="program_id" class="form-control" id="program">
                         <option value="">Select Program</option>
-                        @foreach (App\Models\Program::where('status',1)->pluck('name','id') as $key => $program)
+                        @foreach (App\Models\Program::where('status', 1)->pluck('name', 'id') as $key => $program)
                             <option value="{!! $key !!}">{!! $program !!}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="semester" class="col-sm-3 col-form-label">Semester</label>
+                <div class="col-sm-9">
+                    <select name="semester" id="Semester" class="form-control" id="semester">
+                        <option value="">Select Semester</option>
+                        @foreach (App\Models\Subject::$semester as $key => $value)
+                            <option value="{!! $key !!}">{!! $value !!}</option>
                         @endforeach
                     </select>
                 </div>
@@ -22,7 +33,8 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-9">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="DBMS" required>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="DBMS"
+                        required>
                 </div>
             </div>
             <div class="form-group row">
