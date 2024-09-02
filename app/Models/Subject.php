@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subject extends Model
 {
-    use HasFactory;
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $dates = [ 'deleted_at' ] ;

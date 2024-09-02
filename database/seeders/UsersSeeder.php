@@ -24,5 +24,23 @@ class UsersSeeder extends Seeder
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);
+        User::create([
+            'role' => 'teacher',
+        	'first_name' => 'Test',
+            'last_name' => '',
+        	'email' => 'teacher@shayona.com',
+            'password' => bcrypt('teacher'),
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'role' => 'student',
+        	'first_name' => 'Test',
+            'last_name' => '',
+        	'email' => 'student@shayona.edu.com',
+            'password' => bcrypt('nvpq123'),
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10),
+        ]);
     }
 }

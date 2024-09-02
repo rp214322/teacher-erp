@@ -23,18 +23,24 @@ class Program extends Model
     public function subjects(){
         return $this->hasMany(Subject::class);
     }
+    public function users(){
+        return $this->hasMany(User::class);
+    }
     protected static function boot()
     {
         parent::boot();
 
-        static::deleting(function ($product) {
-            foreach ($product->subjects as $subject) {
+        static::deleting(function ($program) {
+            foreach ($program->subjects as $subject) {
                 $subject->delete();
+            }
+            foreach ($program->users as $user) {
+                $user->delete();
             }
         });
 
-        static::restoring(function ($product) {
-            $product->subjects()->withTrashed()->restore();
+        static::restoring(function ($program) {
+            $program->users()->withTrashed()->restore();
         });
     }
 }

@@ -19,7 +19,7 @@ class AdminAuthentication
     {
         if(Auth::check())
         {
-            if(Auth::user()->role == 'admin')
+            if(in_array(Auth::user()->role,['admin','teacher','student']))
             {
                 return $next($request);
             }

@@ -6,7 +6,7 @@ jQuery.fn.dataTableExt.oSort['string-case-asc']  = function(x,y) {
 jQuery.fn.dataTableExt.oSort['string-case-desc'] = function(x,y) {
 	return ((x < y) ?  1 : ((x > y) ? -1 : 0));
 };
-var userTable = $('#AgentsTable').DataTable({
+var userTable = $('#FacultyTable').DataTable({
     dom: '<"top"f>tr<"bottom"ip>',
     processing: true,
     serverSide: true,
@@ -15,11 +15,10 @@ var userTable = $('#AgentsTable').DataTable({
 
     columns: [
         {data: 'id', name: 'id',orderable: true,width:'4%'},
-        {data: 'name', name: 'name',orderable:true},
-        {data: 'agency_name', name: 'agency_name',orderable:true},
-        {data: 'country', name: 'country.name',orderable: true},
-        {data: 'city', name: 'city.name',orderable:true},
-        {data: 'action', name: 'action', orderable: false,width:'20%'},
+        {data: 'program', name: 'program.name',orderable: true},
+        {data: 'first_name', name: 'first_name',orderable: true},
+        {data: 'email', name: 'email',orderable: true},
+        {data: 'action', name: 'action', orderable: false,width:'10%'},
     ],
     language: {
         emptyTable: "No matching records found"
@@ -40,39 +39,33 @@ $('#user_filter').change(function (e) {
     userTable.page.len($(this).val()).draw();
 });
 
-// Sort by columns 1 and 2 and redraw
-// userTable.order( [ 0, 'desc' ]).draw();
-
 $.fn.dataTable.ext.errMode = 'none';
 userTable.on('error', function () {
     alert("Something went wrong, Please try after sometimes.");
 });
 
 jQuery(function(){
-    var m=document.getElementById('AgentModel'),table=document.getElementById('AgentsTable');
-    var rack_types = {
+    var m=document.getElementById('FacultyModel'),table=document.getElementById('FacultyTable');
+    var users = {
         init: function() {
             jQuery(document).on('click','.btn-submit',function(e){
                 //jQuery('.pre-loader').show();
-                for (instance in CKEDITOR.instances) {
-                    CKEDITOR.instances[instance].updateElement();
-                }
                 var _this = jQuery(this);
                 e.preventDefault();
-                rack_types.fire(_this,"save");
+                users.fire(_this,"save");
             });
             jQuery(document).on('click','.fill_data',function(e){
                 //jQuery('.pre-loader').show();
                 var _this = jQuery(this);
                 e.preventDefault();
-                rack_types.fire(_this,"fetch");
+                users.fire(_this,"fetch");
             });
             jQuery(document).on('click',".btn-delete",function(e){
                 //jQuery('.pre-loader').show();
                 var _this = jQuery(this);
                 e.preventDefault();
                 if(confirm('Are you sure?')){
-                    rack_types.fire(_this,"delete");
+                    users.fire(_this,"delete");
                 }
             });
 
@@ -145,7 +138,7 @@ jQuery(function(){
             ajax.fire();
         }
     }
-
+    
     var model = {
         init: function(){
             jQuery(m).on('shown.bs.modal',function(){
@@ -157,21 +150,6 @@ jQuery(function(){
             });
         }
     }
-    rack_types.init();
+    users.init();
     model.init();
-
-    $(document).on('change','#CountryId', function() {
-        var id = $(this).val();
-        $.ajax({
-            url: fetchData,
-            type: "GET",
-            data: {
-                id: id,
-                type: "city"
-            },
-            success: function (response) {
-                $('#CityId').html(response);
-            }
-        });
-    });
 });

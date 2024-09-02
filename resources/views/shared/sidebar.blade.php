@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('admin.faculty.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon fa fa-chalkboard-teacher"></span><span class="mtext">Faculty</span>
                     </a>
                 </li>
